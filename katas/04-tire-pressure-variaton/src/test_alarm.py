@@ -18,3 +18,13 @@ class AlarmTest(unittest.TestCase):
         self._alarm.check()
 
         display.print.assert_called_with("Alarm activated!")
+
+    def test_alarm_no_activated(self):
+        attrs = {'pop_next_pressure_psi_value.return_value': 21}
+        sensor = Mock(spec=Sensor, **attrs)
+        display = Mock(spec=Display)
+        self._alarm = Alarm(sensor, display)
+
+        self._alarm.check()
+
+        display.print.assert_not_called()
