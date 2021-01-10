@@ -9,69 +9,28 @@ Be able to test `Alarm`'s `check` function without changing the method signature
 
 ## Tools
 
-# TODO: Look how to make spies and stubs in python 
-
-[Mockito](http://mockito.org/)
+[unittest.mock](https://docs.python.org/3.8/library/unittest.mock.html)
 
 ### Example of spying an interaction
-```java
-interface Collaborator {
-  void collaborate();
-}
 
-class MyClass {
-  private final Collaborator collaborator;
+```python
+from unittest.mock import Mock
 
-  public MyClass(Collaborator collaborator) {
-    this.collaborator = collaborator;
-  }
-
-  public void run() {
-    collaborator.collaborate();
-  }
-}
-
-@Test
-public void example_of_spying_an_interaction() {
-  Collaborator collaborator = mock(Collaborator.class);
-  MyClass myClass = new MyClass(collaborator);
-
-  myClass.run();
-
-  verify(collaborator).collaborate();
-}
+collaborator = Mock()
+collaborator.command()
+collaborator.command.assert_called()
+collaborator.command(5)
+collaborator.command.assert_called_with(5)
 ```
 
 ### Example of stubbing an interaction
 
-```java
-interface Collaborator {
-  String collaborate();
-}
+```python
+from unittest.mock import Mock
 
-class MyClass {
-  private final Collaborator collaborator;
-
-  public MyClass(Collaborator collaborator) {
-    this.collaborator = collaborator;
-  }
-
-  public String run() {
-    return collaborator.collaborate();
-  }
-}
-
-@Test
-public void example_of_stubbing_an_interaction() {
-  Collaborator collaborator = mock(Collaborator.class);
-  String collaboratorResponse = "some response";
-  when(collaborator.collaborate()).thenReturn(collaboratorResponse);
-  MyClass myClass = new MyClass(collaborator);
-
-  String result = myClass.run();
-
-  assertEquals(result, collaboratorResponse);
-}
+collaborator = Mock(command='ok')
+actual = collaborator.command()
+self.assertEqual('ok', actual)
 ```
 
 ## Learnings
