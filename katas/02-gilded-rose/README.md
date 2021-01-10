@@ -37,6 +37,8 @@ Feel free to make any changes to the UpdateQuality method and add any new code a
 
 Just for clarification, an item can never have its Quality increase above 50, however "Sulfuras" is a legendary item and as such its Quality is 80 and it never alters.
 
-[Possible tests solution](https://gist.githubusercontent.com/adelatorrefoss/ebc658b3e0054913dced80c8fe384de0/raw/6a0861d30009b65669927a19fd05cba6c75f8719/GildedRoseTest.java)
+[Possible tests solution](https://gist.github.com/adelatorrefoss/c8a78f193a839ada78493f234f4fa6bb#file-test_gilded_rose-py)
 
-Thanks to [Emily Bach repo](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/python)!  
+[A golden master](https://gist.github.com/adelatorrefoss/c8a78f193a839ada78493f234f4fa6bb#file-golden_master_gilded_rose-py)
+
+*Thanks to [Emily Bach for the Gilded Rose code](https://github.com/emilybache/GildedRose-Refactoring-Kata/tree/master/python)!*  
