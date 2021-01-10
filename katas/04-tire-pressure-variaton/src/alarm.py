@@ -7,6 +7,7 @@ class Alarm:
         self._HighPressureThreshold = 21
 
         self._sensor = Sensor()
+        self._display = Display()
         self._alarm_on = False
 
     def check(self):
@@ -15,11 +16,16 @@ class Alarm:
         if (psi_pressure_value < self._LowPressureThreshold) or (self._HighPressureThreshold < psi_pressure_value):
             if not self._is_alarm_on():
                 self._alarm_on = True
-                print("Alarm activated!")
+                self._display.print_message("Alarm activated!")
 
         else:
             if self._is_alarm_on():
-                print("Alarm deactivated!")
+                self._display.print_message("Alarm deactivated!")
 
     def _is_alarm_on(self):
         return self._alarm_on
+
+
+class Display:
+    def print_message(self, msg):
+        print(msg)
