@@ -26,9 +26,11 @@ collaborator.command.assert_called_with(5)
 ### Example of stubbing an interaction
 
 ```python
+import unittest
 from unittest.mock import Mock
 
-collaborator = Mock(command='ok')
+attrs = {'command.return_value': 'ok'}
+collaborator = Mock(**attrs)
 actual = collaborator.command()
 self.assertEqual('ok', actual)
 ```
