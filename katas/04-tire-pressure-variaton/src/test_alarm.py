@@ -1,8 +1,8 @@
 import unittest
 from unittest.mock import Mock
 
-from src.alarm import Alarm, Display
-from src.sensor import Sensor
+from alarm import Alarm, Display
+from sensor import Sensor
 
 
 class AlarmTest(unittest.TestCase):
