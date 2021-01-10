@@ -1,13 +1,18 @@
 from sensor import Sensor
 
 
+class Display:
+    def print(self, msg):
+        print(msg)
+
+
 class Alarm:
-    def __init__(self):
+    def __init__(self, sensor=Sensor(), display=Display()):
         self._LowPressureThreshold = 17
         self._HighPressureThreshold = 21
 
-        self._sensor = Sensor()
-        self._display = Display()
+        self._sensor = sensor
+        self._display = display
         self._alarm_on = False
 
     def check(self):
@@ -24,8 +29,3 @@ class Alarm:
 
     def _is_alarm_on(self):
         return self._alarm_on
-
-
-class Display:
-    def print(self, msg):
-        print(msg)
