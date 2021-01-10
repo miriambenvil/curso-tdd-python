@@ -1,12 +1,20 @@
 import unittest
+from unittest.mock import Mock
 
-from src.alarm import Alarm
+from src.alarm import Alarm, Display
+from src.sensor import Sensor
 
 
 class AlarmTest(unittest.TestCase):
     def setUp(self):
-        self._alarm = Alarm()
+        pass
 
-    def test_run_alarm(self):
+    def test_activate_alarm(self):
+        attrs = {'pop_next_pressure_psi_value.return_value': 22}
+        sensor = Mock(spec=Sensor, **attrs)
+        display = Mock(spec=Display)
+        self._alarm = Alarm(sensor, display)
+
         self._alarm.check()
-        self.assertEqual(True, False)
+
+        display.print.assert_called_with("Alarm activated!")
