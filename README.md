@@ -1,9 +1,9 @@
 # Katas
 
-## [Fizz Buzz](katas/fizz-buzz/)
+## [Fizz Buzz](katas/01-fizz-buzz/)
 Good kata to start doing TDD
 
-## [Gilded Rose](katas/gilded-rose/)
+## [Gilded Rose](katas/02-gilded-rose/)
 Refactoring kata
 
 ## [Password validator](katas/password-validator/)
