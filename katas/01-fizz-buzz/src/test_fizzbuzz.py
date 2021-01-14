@@ -4,11 +4,11 @@ import unittest
 def list_to_100():
     list_100 = []
     for i in range(1, 101):
-        list_100.append(modify_multiple_of_3_or_5(i))
+        list_100.append(fizzbuzz(i))
     return list_100
 
 
-def modify_multiple_of_3_or_5(number):
+def fizzbuzz(number):
     number_str = str(number)
     if number % 3 == 0 and number % 5 == 0:
         return "FizzBuzz"
